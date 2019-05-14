@@ -1,0 +1,50 @@
+#header{
+  background-color: black;
+  color: aliceblue;
+  margin: auto;
+  text-align: center;
+}
+#footer{
+  background-color: purple;
+  color: black;
+  text-align: center;
+}
+#a{
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+ul{
+  width: 600px;
+  margin: auto;
+  padding-left: 0px;
+}
+#b ul li {
+  width: 174px;
+  height: 34px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+  margin: 15px 30px 15px 30px;
+  text-align: center;
+  background-color: pink;
+  list-style-type: none;
+}
+#b ul li:nth-child(3n-2){
+  margin-left: 0px;
+}
+#b ul li:nth-child(3n-1){
+  margin-left: 210px; 
+  margin-top: -55px;
+}
+#b ul li:nth-child(3n){
+  margin-left: 420px; 
+  margin-top: -55px;
+}
+#c ul li{
+  list-style-type:none;
+  border-bottom-style: dotted;
+ }
+#c ul li:nth-child(5){
+  border-style: none;
+}
