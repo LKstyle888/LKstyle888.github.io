@@ -1,0 +1,29 @@
+.ch_1{
+  display: none;
+}
+.ch_1 + .ch_l {
+  display: block;
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px;
+  outline: none;
+  background-color: darkgray;
+}
+.ch_l::before{
+  position: relative;
+  display: inline-block;
+  content: "";
+  width: 50%;
+  border-radius: 25px;
+  height: 100%;
+  border: 1px;
+  background-color: bisque;
+  outline: none;
+}
+.ch_1:checked+ .ch_l::before{
+  left: 50px;
+}
+.ch_1:checked+ .ch_l{
+  background-color: chartreuse;
+}
