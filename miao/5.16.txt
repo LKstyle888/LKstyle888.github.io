@@ -1,0 +1,8 @@
+pointer-events: none  鼠标不能交互
+display 无法执行动画	
+visibility:visible：元素正常显示	
+visibility:hidden: 隐藏元素，不改变布局，即透明元素
+transition:为元素在不同状态间切换时提供过渡
+calc()函数用一个表达式作为它的参数，用这个表达式的结果作为值
+			
+ 	 	
