@@ -1,7 +1,7 @@
 /* 使用部分行内布局 */
 
 *{
-  box-sizing : border-
+  box-sizing : border-box;
   /*     
 }
 html,body{
