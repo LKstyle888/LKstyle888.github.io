@@ -1,0 +1,47 @@
+/* 使用部分行内布局 */
+
+*{
+  box-sizing : border-box;
+  /* 设置盒子布局为内容区 */
+}
+html,body{
+  height: 100%;
+  margin: 0;
+}
+/* 设置整体页面布局，高度为100%，外边距为0 */
+div{
+  height: 100%;
+}
+header {
+  height: 100px;
+  /* 设置页眉高度为100px */
+  background-color: aqua;
+  border-bottom: 2px black solid;
+}
+section {
+  height: calc(100% - 100px);
+  /* 设置section高度，注：减号两端应加空格 */
+  background-color: antiquewhite;
+  /* border-right: 2px black solid; */
+  font-size: 0
+  /* 行内元素宽度不够时会折行，折行的部分会产生空格，将字体尺寸设置为0可去除产生的空格，但是会造成匿名文本无法显示 */
+}
+section *{
+  font-size: 16px;
+  /* 设置section所有后代元素的字体高度为16px, 匿名文本内容就可以正常显示*/
+}
+aside {
+  width: 200px;
+  height: 100%;
+  border-right: 2px black solid;
+  background-color: blueviolet;
+  display: inline-block;
+}
+main{
+  width: calc(100% - 200px);
+  height: 100% ;
+  background-color: chocolate;
+  display: inline-block;
+}
+/* 块元素后代子元素会继承父元素的尺寸 */
+/* 使块元素放在同一行可已使用display:inline- block将块元素改为行内块元素，注意整体长度，超过父元素仍会折行显示，并且会产生空格 */
