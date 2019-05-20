@@ -1,0 +1,49 @@
+*{
+  box-sizing:border-box;
+}
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+div{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  font-size: 0;
+}
+div *{
+  font-size: 20px;
+}
+div .a {
+  width: 15%;
+  height: 100%;
+  background-color: antiquewhite;
+  display:inline-block
+}
+div .b {
+  width: 35%;
+  height: 100%;
+  background-color: aqua;
+  display:inline-block
+}
+div .c {
+  width: 35%;
+  height: 100%;
+  background-color: aquamarine;
+  display:inline-block
+}
+div .d {
+  width: 15%;
+  height: 100%;
+  background-color: blueviolet;
+  display:inline-block
+}
+.b #header{
+  height: 20%;
+  background-color: black;
+}
+.b #main{
+  height: 80%;
+  background-color: blue;
+}
