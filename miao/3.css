@@ -1,0 +1,32 @@
+/* 使用块元素布局 */
+*{
+  box-sizing : border-box;
+  /* 设置盒子布局为内容区 */
+}
+html,body{
+  height: 100%;
+  margin: 0;
+}
+body{
+  height: 100%;
+}
+header{
+  height: 100px;
+  position: relative;
+  background-color: aqua;
+  border-bottom: 2px black solid;
+}
+aside{
+  width: 200px;
+  height: calc(100% - 100px);
+  background-color: blue;
+  position:absolute;
+  border-right: 2px black solid;
+}
+main{
+  width: calc(100% - 200px);
+  height: calc(100% - 100px);
+  position:absolute;
+  background-color: bisque;
+  right: 0
+}
