@@ -1,0 +1,22 @@
+*{
+  background-color: rgba(0,0,0,0.08);
+}
+div {
+  width: 200px;
+  height: 100px;
+  border: 2px solid black;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  top:0;
+  right:0;
+  bottom: 0;
+  left:0;
+  position: absolute;
+}
