@@ -1,0 +1,39 @@
+*{
+  background-color: rgba(0, 0, 0, 0.08);
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+section {
+  width: 10rem;
+  height: 100%;
+  background-color: antiquewhite;
+  float: left;
+}
+header {
+  width: calc(100% - 30rem);
+  height: 10rem;
+  background-color: black;
+  float: left;
+}
+main {
+  width: 10rem;
+  height: 100%;
+  background-color: aquamarine;
+  float: right;
+}
+aside{
+  width: 10rem;
+  height: 100%;
+  background-color: blue;
+  float: right;
+}
+content {
+  display: block;
+  width: calc(100% - 30rem);
+  height: calc(100% - 10rem);
+  background-color: brown;
+  overflow: hidden;
+}
