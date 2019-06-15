@@ -1,0 +1,119 @@
+<script id="ch0103/18">
+  var a1 = Number(prompt ("请输入a1的值"))
+  var a2 = Number(prompt ("请输入a2的值"))
+  var n = Number(prompt ("请输入要求的是第几项"))
+  var d = a2 - a1   //设置等差值d
+  var an = a1 + (n - 1) * d 
+  console.log(an)
+</script>
+
+<script id="ch0103/16">
+  var Xa = Number(prompt ("请输入A的横坐标值"))
+  var Ya = Number(prompt ("请输入A的纵坐标值"))
+  var Xb = Number(prompt ("请输入B的横坐标值"))
+  var Yb = Number(prompt ("请输入B的纵坐标值"))
+  var AB_lenght = Math.sqrt((Xb - Xa)**2+(Yb - Ya)**2)
+  console.log(AB_lenght)
+</script>
+  
+<script id="ch0103/13">
+  var n = Number(prompt ("请输入要反向输入的三位数"))
+  var n_digits = n % 10
+  var n_ten_digits = n % 100 - n_digits
+  var n_hunderds_digits = (n - (n_digits + n_ten_digits)) / 100
+  var n_reverse = n_digits*100 + n_ten_digits + n_hunderds_digits
+  console.log(n_reverse)
+</script>
+
+<script id="ch0103/19">
+  var a = Number(prompt ("请输入a的值"))
+  var b = Number(prompt ("请输入b的值"))
+  if(a % 1 == 0 && b % 1 == 0){
+    var n = a * b
+    console.log(n)
+  }else
+  alert("输入的值必须为整数")
+</script>
+
+<script id="ch0103/20">
+  var n = Number(prompt ("请输入要求的次方的值"))
+  var a = 2**n
+  console.log(a)
+</script>
+
+<script id="ch0104/21">
+  var n = Number(prompt ("请输入一箱内的苹果数量"))
+  var x = Number(prompt ("请输入虫子吃掉一个苹果需要的小时数"))
+  var y = Number(prompt ("请输入从虫子吃第一个苹果开始经过了多少小时数"))
+  var i = Math.floor(n - y / x)
+  console.log(i)
+</script>
+
+<script id="ch0104/01">
+  var N = Number(prompt ("请输入一个整数"))
+  if(N % 1 == 0){
+    if(N > 0){
+      console.log("positive")
+    }
+    else 
+      if(N == 0){
+      console.log("ZERO")
+    }else
+      console.log("negtive")
+  }else
+  alert("输入的值必须为整数")
+</script>
+
+<script id="ch0104/03">
+  var i = Number(prompt("请输入一个数"))
+  if(i % 1 ==0){
+    if(i % 2==0){
+      console.log("even")
+    }else
+    console.log("odd")
+  }else
+  alert("输入的值必须为整数")
+</script>
+
+<script id="ch0104/02">
+  var i = Number(prompt("请输入一个数"))
+  if(i % 1 !=0){
+    if(i > 0){
+      console.log(i)
+    }else
+    console.log(-i)
+  }else
+  alert("输入的值必须为浮点数")
+</script>
+  
+<script id="ch0104/13">
+  var N = Number(prompt("请输入一个数"))
+  if(N % 1 != 0){
+    if(0 <= N && N < 5){
+      var fn1 = -N + 2.5
+      fn1 = fn1.toFixed(3)
+      console.log(fn1)
+    }
+    else{      
+      if(5 <= N && N < 10){
+        var fn2 = 2-1.5*(N-3)*(N-3)
+        fn2 = fn2.toFixed(3)
+        console.log(fn2)
+      }
+      else{        
+        if(10 <= N && N < 20){
+          var fn3 = N/2-1.5
+          fn3 = fn3.toFixed(3)
+          console.log(fn3)
+        }
+        else{
+          if(N > 20){
+          alert("输入的值必须在大于等于0小于20范围内")
+          } 
+        }  
+      }
+    }
+  }
+  else
+  alert("输入的值必须为浮点数")
+</script>
