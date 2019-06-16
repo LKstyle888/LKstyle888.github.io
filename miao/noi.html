@@ -17,12 +17,16 @@
 </script>
   
 <script id="ch0103/13">
-  var n = Number(prompt ("请输入要反向输入的三位数"))
+  var n = Number(prompt ("请输入要反向输入的三位正整数"))
   var n_digits = n % 10
   var n_ten_digits = n % 100 - n_digits
   var n_hunderds_digits = (n - (n_digits + n_ten_digits)) / 100
   var n_reverse = n_digits*100 + n_ten_digits + n_hunderds_digits
-  console.log(n_reverse)
+  if(n>=100 && n<1000 && n%1==0){
+    console.log(n_reverse)
+  } 
+  else
+    alert("输入的值应该是三位正整数")
 </script>
 
 <script id="ch0103/19">
@@ -88,7 +92,6 @@
   
 <script id="ch0104/13">
   var N = Number(prompt("请输入一个数"))
-  if(N % 1 != 0){
     if(0 <= N && N < 5){
       var fn1 = -N + 2.5
       fn1 = fn1.toFixed(3)
@@ -107,15 +110,12 @@
           console.log(fn3)
         }
         else{
-          if(N > 20){
+          if(N >= 20 || N < 0){
           alert("输入的值必须在大于等于0小于20范围内")
           } 
         }  
       }
     }
-  }
-  else
-  alert("输入的值必须为浮点数")
 </script>
 
 <script id="ch0103/01">
@@ -214,7 +214,11 @@
   d = d.toFixed(4)
   l = l.toFixed(4)
   s = s.toFixed(4)
-  console.log(d,l,s)
+  if(r > 0 && r <= 10000){
+    console.log(d,l,s)
+  }
+  else
+    alert("输入的值范围应该为 0<r<=10000")
 </script>
 
 <script id="ch0103/10">
@@ -229,15 +233,19 @@
   var a = Number(prompt("请输入a的值"))
   var b = Number(prompt("请输入b的值"))
   var i = a % b
-  i = i.toFixed(2)
+  i = i.toFixed(4)
   console.log(i)
 </script>
 
 <script id="ch0103/12">
   var r = Number(prompt("请输入球体的半径"))
-  var V = 4 / 3 * r**3 * Math.PI
+  var V = (4 / 3) * r**3 * 3.14
   V = V.toFixed(2)
-  console.log(V)
+  if(r>0 && r<=100){
+    console.log(V)
+  }
+  else
+    alert("半径值的范围 0<r<=100")
 </script>
 
 <script id="ch0103/14">
@@ -437,7 +445,25 @@
   var a = Number(prompt("请输入数字a的值"))
   var b = Number(prompt("请输入数字b的值"))
   var c = Number(prompt("请输入数字c的值"))
-
+  if(a%1==0 && b%1==0 && c%1==0){
+    if(a>b && a>c){
+      console.log(a)
+    }
+    else
+      if(b>a && b>c){
+        console.log(b)
+      }
+      else
+        if(c>a && c>b){
+          console.log(c)
+        }
+        else
+          if(a==b && b==c){
+            console.log(a)
+          }
+  }
+  else
+    alert("输出的值应该为整数")
 </script>
 
 <script id="ch0104/16">
@@ -523,7 +549,8 @@
   var b = Number(prompt("请输入b的值"))
   var c = Number(prompt("请输入c的值"))
   var i = (b**2 - 4*a*c)
-  if(i > 0){
+  if(a !== 0){
+    if(i > 0){
     var x1 = (-b + i_sqrt) / (2*a)
     var x2 = (-b - i_sqrt) / (2*a)
     var i1_sqrt = Math.sqrt(i)
@@ -535,7 +562,7 @@
       console.log(x)
     }
     else
-      if(i < 0){
+        {
         var i2_sqrt = Math.sqrt(-i)
         var x_real = (-b) / (2*a) 
         var x_imaginary = (i2_sqrt) / (2*a)
@@ -543,6 +570,9 @@
         var _x2 = x_real + '-' + x_imaginary + 'i'
         console.log(_x1,_x2)
       }
+  }
+  else
+    alert("a的值不能等于0")
 </script>
 
 </script>
