@@ -117,3 +117,469 @@
   else
   alert("输入的值必须为浮点数")
 </script>
+
+<script id="ch0103/01">
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var sum = a + b
+  if(a % 1 == 0 && b % 1 == 0){
+    console.log(sum)
+  }else
+  alert("输入的值需要为整数")
+</script>
+
+<script id="ch0103/02">
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var c = Number(prompt("请输入c的值"))
+  var n = (a + b)*c
+  if(a % 1 == 0 && b % 1 == 0 && c % 1 == 0){
+    console.log(n)
+  }else
+  alert("输入的值需要为整数")
+</script>
+
+<script id="ch0103/03">
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var c = Number(prompt("请输入c的值"))
+  var n = (a + b)/c
+  n = Math.floor(n)
+  if(a % 1 == 0 && b % 1 == 0 && c % 1 == 0){
+    console.log(n)
+  }else
+  alert("输入的值需要为整数")
+</script>
+
+<script id="ch0103/04">
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var c = a / b
+  c = Math.floor(c)
+  var d = a % b
+  if(a % 1 == 0 && b % 1 == 0 ){
+    console.log(c,d)
+  }else
+  alert("输入的值需要为整数")
+</script>
+
+<script id="ch0103/05">
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var n = a/b 
+  n = n.toFixed(9)
+  if(a % 1 == 0 && b % 1 == 0 ){
+    console.log(n)
+  }else
+  alert("输入的值需要为整数")
+</script>
+
+<script id="ch0103/06">
+  var a = Number(prompt("请输入甲流确诊人数a"))
+  var b = Number(prompt("请输入甲流死亡人数b"))
+  var n = b / a * 100 
+  n = n.toFixed(3) + "%"
+  if(a % 1 == 0 && b % 1 == 0 ){
+    console.log(n)
+  }else
+  alert("输入的值需要为整数")
+</script>
+
+<script id="ch0103/07">
+  var x = Number(prompt("请输入x的值"))
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var c = Number(prompt("请输入c的值"))
+  var d = Number(prompt("请输入d的值"))
+  var n =  a*x**3 + b*x**2 + c*x + d 
+  n = n.toFixed(7)
+  console.log(n)
+</script>
+
+<script id="ch0103/08">
+  var f = Number(prompt("请输入华氏温度"))
+  var c = 5 * (f-32) / 9
+  c = c.toFixed(5)
+  if(f >= -459.67){
+    console.log(c)
+  }else
+  alert("请输入华氏温度范围内的数")
+</script>
+
+<script id="ch0103/09">
+  var r = Number(prompt("请输入圆的半径"))
+  var d = 2 * r
+  var l = d * Math.PI
+  var s = r ** 2 * Math.PI
+  d = d.toFixed(4)
+  l = l.toFixed(4)
+  s = s.toFixed(4)
+  console.log(d,l,s)
+</script>
+
+<script id="ch0103/10">
+  var r1 = Number(prompt("请输入电阻ri的电阻值"))
+  var r2 = Number(prompt("请输入电阻r2的电阻值"))
+  var R = 1/(1/r1 + 1/r2)
+  R = R.toFixed(2)
+  console.log(R)
+</script>
+
+<script id="ch0103/11">
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var i = a % b
+  i = i.toFixed(2)
+  console.log(i)
+</script>
+
+<script id="ch0103/12">
+  var r = Number(prompt("请输入球体的半径"))
+  var V = 4 / 3 * r**3 * Math.PI
+  V = V.toFixed(2)
+  console.log(V)
+</script>
+
+<script id="ch0103/14">
+  var h = Number(prompt("输入水桶深度"))
+  var r = Number(prompt("输入水桶半径"))
+  var V = r**2 * Math.PI * h
+  var n = 20 * 1000 / V
+  n = Math.ceil(n)
+  console.log(n)
+</script>
+
+<script id="ch0103/15">
+  var n = Number(prompt ("请输入一箱内的苹果数量"))
+  var x = Number(prompt ("请输入虫子吃掉一个苹果需要的小时数"))
+  var y = Number(prompt ("请输入从虫子吃第一个苹果开始经过了多少小时数"))
+  var i = Math.floor(n - y / x)
+  if(y <= n * x && n > 0 && x > 0 && y >= 0 && n%1==0){
+    console.log(i)
+  }
+  else
+  console.log(i)
+</script>
+
+<script id="ch0103/17">
+  var x1 = Number(prompt("请输入第一个点的横坐标"))
+  var y1 = Number(prompt("请输入第一个点的纵坐标"))  
+  var x2 = Number(prompt("请输入第二个点的横坐标"))  
+  var y2 = Number(prompt("请输入第二个点的纵坐标"))  
+  var x3 = Number(prompt("请输入第三个点的横坐标"))  
+  var y3 = Number(prompt("请输入第三个点的纵坐标"))
+  var S = (1/2)*(x1*y2 + x2*y3 + x3*y1 - x1*y3 - x2*y1 - x3*y2)
+  S = S.toFixed(2)
+  console.log(S)
+</script>
+
+<script id="ch0104/04">
+  var a = prompt("请输入一个字符")
+  a = a.charCodeAt()//将字符转换为 ASCII 
+  if(a % 2 == 0){
+    console.log("NO")
+  }else
+  console.log("YES")
+</script>
+
+<script id="ch0104/05">
+  var x = Number(prompt("请输入x的值"))
+  var y = Number(prompt("请输入y的值"))
+  if(0 <= x && x < 2**32 && (-2)**31 <= y && y < 2**31){
+    if(x > y){
+      console.log(">")
+    }else
+      if(x < y){
+        console.log("<")
+      }else
+      console.log("=")
+  }else
+  alert("请输入范围内的值")
+</script>
+
+<script id="ch0104/06">
+  var a = Number(prompt("请输入数字a"))
+  if(a % 1 == 0 && a < 1000 && a > 0){
+    if(a > 10 && a < 99){
+      console.log(1)
+    }else
+    console.log(0)
+  }else
+  alert("请输入范围内的正整数")
+</script>
+
+<script id="ch0104/07">
+  var a = Number(prompt("请输入拥有的'幸运'瓶盖数"))
+  var b = Number(prompt("请输入拥有的'鼓励'瓶盖数"))
+  var n = a / 10
+  n = Math.floor(n)
+  var m = b / 20
+  m = Math.floor(m)
+  var i = n + m
+  if(a % 1 == 0 && b % 1 == 0 && a >= 0 && b >= 0){
+    console.log(i)
+  }else
+  alert("输入的值必须为大于等于0的整数")
+</script>
+
+<script id="ch0104/08">
+  var n = Number(prompt("请输入n的值"))
+  if(-1000000 < n && n < 1000000 && n % 1 == 0){
+    if(n % 3 == 0 && n % 5 == 0 ){
+      console.log("YES")
+    }else
+    console.log("NO")
+  }else
+  alert("请输入在取值范围内的整数！")
+</script>
+
+<script id="ch0104/09">
+  var n = Number(prompt("请输入整数数字n的值"))
+  if(n%1==0){
+    if(n%3==0 && n%7==0 && n%5==0){
+      console.log(3,5,7)
+    }
+    else
+      if(n%3==0 && n%7==0){
+        console.log(3,7)
+      }
+      else
+        if(n%7==0 && n%5==0){
+          console.log(5,7)
+        }
+        else
+          if(n%3==0 && n%5==0){
+            console.log(3,5)
+          }
+          else
+            if(n%3==0){
+              console.log(3)
+            }
+            else
+              if(n%7==0){
+                console.log(7)
+              }
+              else
+                if(n%5==0){
+                  console.log(5)
+                }
+  }  
+  else
+    alert("输入的值必须为整数")
+</script>
+
+<script id="ch0104/10">
+  var i = Number(prompt("请输入语文成绩"))
+  var n = Number(prompt("请输入数学成绩"))
+  if(i>=0 && i<=100 && n>=0 && n<=100 && i % 1 == 0 && n % 1 == 0){
+    if(i<60 || n<60){
+      console.log(1)
+    }else
+    console.log(0)
+  }else
+  alert("成绩不在取值范围内！")
+</script>
+
+<script id="ch0104/11">
+  var i = Number(prompt("请输入看展览的日期"))
+  if(i>=1 && i<=7 && i%1==0){
+    if(i%2==0){
+      console.log("YES")
+    }else
+    console.log("NO")
+  }else
+  alert("请输入正确的值")
+</script>
+
+<script id="ch0104/12">
+  var l = Number(prompt("请输入行走的距离"))
+  var i = l / 1.2   //步行需要的时间
+  var n = l / 3 + (27+23)   //骑车需要的时间
+  if(l>=0 && l%1==0){
+    if(i>n){
+      console.log("Bike")   
+    }else
+      if(i<n){
+        console.log("Walk")
+      }else
+      console.log("All")
+  }else
+  alert("行走的距离为包括0的正整数")
+</script>
+
+<script id="ch0104/14">
+  var i = Number(prompt("输入邮件的重量"))
+  var a = prompt("是否要加急")
+  var n1 = 8
+  var n2 = 4
+  var n3 = 5
+  var n = (i-1000) / 500
+  n = Math.ceil(n)    //向上取整
+  if(i>0 && a=='y' || a=='n'){
+    if(i<=1000 && a=='y'){
+      console.log(n1+n3)
+    }else
+      if(i>1000 && a=='y'){
+        console.log(n1+n3+4*n)
+      }
+
+    if(i<=1000 && a=='n'){
+      console.log(n1)
+    }else
+      if(i>1000 && a=='n'){
+        console.log(n1+4*n)
+      }
+  }else
+  alert("请输入正确的值")
+</script>
+
+<script id="ch0104/15">
+  var a = Number(prompt("请输入数字a的值"))
+  var b = Number(prompt("请输入数字b的值"))
+  var c = Number(prompt("请输入数字c的值"))
+
+</script>
+
+<script id="ch0104/16">
+  var a = Number(prompt("请输入数字a的值"))
+  var b = Number(prompt("请输入数字b的值"))
+  var c = Number(prompt("请输入数字c的值"))
+  if(a>0 && b>0 && c>0 && a%1==0 && b%1==0 &&c%1 == 0){
+    if((a+b>c && a-b<c) && (a+c>b && a-c<b ) && (c+b>a && c-b<a)){
+      var n1= Math.abs(a-b)
+      var n2= Math.abs(a-c)
+      var n3= Math.abs(b-c)
+      console.log("yes")
+    } 
+    else  
+      console.log("no")
+  }
+  else
+    alert("请输入正整数")
+</script>
+
+<script id="ch0104/17">
+  var a = Number(prompt("请输入年份"))
+  if(a>0 && a<3000){
+    if((a%4!=0 || a%400!=0) && a%100==0){
+      console.log("N")
+    }
+    else
+      if(a%4==0 || a%400==0){
+        console.log("Y")
+      }
+      else
+      console.log("N")
+  }
+  else
+    alert("请输入0<a<3000范围内的年份")
+</script>
+
+<script id="ch0104/18">
+  var x = Number(prompt("请输入点的横坐标"))
+  var y = Number(prompt("请输入点的纵坐标"))
+  if(x%1==0 && y%1==0){
+    if(x>=(-1) && x<=1 && y>=(-1) && y<=1){
+      console.log("yes")
+    }
+    else
+      console.log("no")
+  }
+  else
+    alert("输入的值必须为整数!")
+</script>
+
+<script id="ch0104/19">
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var c = prompt("请输入四则运算符")
+  if((a%1==0 && b%1==0) && (c=='+' || c=='-' || c=='*' || c=='/')){
+    if(c=='+'){
+      var n1 = a+b
+      console.log(n1)
+    }
+    else
+      if(c=='-'){
+        var n1 = a-b
+        console.log(n1)
+      }
+      else
+        if(c=='*'){
+        var n1 = a*b
+        console.log(n1)
+      }
+        else
+          if(c=='/'){
+          var n1 = a/b
+          console.log(n1)
+        }
+  }
+  else
+    alert("输入的值必须为正整数和四则运算符")
+</script>
+
+<script id="ch0104/20">
+  var a = Number(prompt("请输入a的值"))
+  var b = Number(prompt("请输入b的值"))
+  var c = Number(prompt("请输入c的值"))
+  var i = (b**2 - 4*a*c)
+  if(i > 0){
+    var x1 = (-b + i_sqrt) / (2*a)
+    var x2 = (-b - i_sqrt) / (2*a)
+    var i1_sqrt = Math.sqrt(i)
+    console.log(x1,x2)
+  }
+  else
+    if(i == 0){
+      var x = (-b) / (2*a)
+      console.log(x)
+    }
+    else
+      if(i < 0){
+        var i2_sqrt = Math.sqrt(-i)
+        var x_real = (-b) / (2*a) 
+        var x_imaginary = (i2_sqrt) / (2*a)
+        var _x1 = x_real + '+' + x_imaginary + 'i'
+        var _x2 = x_real + '-' + x_imaginary + 'i'
+        console.log(_x1,_x2)
+      }
+</script>
+
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
+<script id="ch0103/01">
+</script>
+
