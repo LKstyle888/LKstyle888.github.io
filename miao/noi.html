@@ -209,8 +209,8 @@
 <script id="ch0103/09">
   var r = Number(prompt("请输入圆的半径"))
   var d = 2 * r
-  var l = d * Math.PI
-  var s = r ** 2 * Math.PI
+  var l = d * 3.14159
+  var s = r ** 2 * 3.14159
   d = d.toFixed(4)
   l = l.toFixed(4)
   s = s.toFixed(4)
@@ -575,41 +575,628 @@
     alert("a的值不能等于0")
 </script>
 
+<script id="ch0105/01">
+  var n = Number(prompt("请输入班上学生人数"))
+  var b = 0
+  if(0 <= n && n <= 100 ){
+    for(var i = 0 ; i < n ; i++){
+    var a = Number(prompt("请输入班上每个学生的年龄"))  
+      if(15 <= a && a <= 25){
+        var b = b + a 
+      }
+      else{
+        alert("年龄范围在15~25！")
+        break
+      }
+    } 
+    var c = b / n
+    console.log(c)
+  }
+  else
+    alert("人数应在0~100！")
 </script>
 
-<script id="ch0103/01">
+<!-- 根据学生数量==输出年龄的次数，每次输入的年龄需要保留并相加 -->
+<!-- 初始年龄b设置为0，初始人数i为0，输入学生人数n（i<0）作为for循环的条件。输入学生年龄a,在循环中与a相加，作为保留所有人年龄的总和-->
+
+<script id="ch0105/02">
+  var a = 0
+  for(var n = 0; n < 12; n++){
+    var i = Number(prompt("请输入每个月的结余"))
+      if(0 < i && i <= 1000000){
+        a = a + i 
+      }
+      else{
+        alert("结余为不大于1000000的正数")
+        break
+      }
+  }
+  var b = a / 12
+  b = b.toFixed(2)
+  console.log('$' + b)
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/03">
+  var n = Number(prompt("请输入样本容量"))
+  var b = 0     //样本初始数据和
+  for(i = 0; i < n; i++){
+    var a = Number(prompt("请输入样本数据"))
+    if(n !== parseInt(a) && (Math.abs(a) <= 1000)){
+      b = b + a 
+    }     //parseInt() 方法用于将字符串参数作为有符号的十进制整数进行解析(网上查到的办法，不过好像不起作用)
+          //本来此处采用 x % 1 !== 0 来表示浮点数，但是对于2.0、 3.0 等，浏览器会判断为错误
+          //暂时没有特别好的办法
+    else{
+      alert("样本数据为绝对值不超过1000的浮点数")
+      break
+    }  
+  }
+  var c = b / n
+  c = c.toFixed(4)
+  console.log(c)
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/04">
+  var a = 0
+  var n = Number(prompt("请输入整数的数量"))
+  if(n % 1 == 0 && n > 0){
+    for(i = 0; i < n; i++){
+      var b = Number(prompt("请输入整数的值"))
+      if(i % 1 == 0 && (Math.abs(i) <= 10000)){
+          a = a + b
+        }
+        else{
+          alert("整数的绝对值不大于10000")
+          break
+        }
+      }
+    var c = a / n 
+    c = c.toFixed(5)
+    console.log(a,c)
+  }
+  else{
+    alert("n为大于0的整数")
+  }
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/05">
+  var a = 0
+  var n = Number(prompt("请输入考试的人数"))
+  if(n % 1 == 0 && 1 <= n && n < 100){
+    for(i = 0; i < n; i++){
+      var b = Number(prompt("请输入每个学生的成绩"))
+      if(i % 1 == 0 && 0 <= i && i <= 100){
+        if(a < b){
+          a = b
+        }
+        else{
+          a = a 
+        }
+      }
+      else{
+        alert("考试成绩为0~100的整数")
+        break
+      }
+    }
+    console.log(a)
+  }
+  else{
+    alert("考试的人数为正整数")
+  }
 </script>
 
-<script id="ch0103/01">
+// <!-- 之前的求和赋值即取一个为0的数依次把每次输入的值付给他并加上原先它自己的值，而取最大值则把输入的值付给它后不加上他自己的值，即每次刷新赋值，只要和之前的值作对比就可以判断大小值 -->
+// <!-- 同样互相对应有联系的数值也可以通过 自-- 来达到要求 -->
+
+<script id="ch0105/06">
+  var a = 0
+  var b = 1000
+  var n = Number(prompt("输入数字的个数"))
+  if(n % 1 == 0 && 1 <= n && n <= 1000){
+    while(n--){
+      var i = Number(prompt("请输入非负整数"))
+      if(i<1000 && i%1==0 && i>=0){
+          if(a < i){
+            a = i
+          }
+          if(b > i){
+            b = i
+          }
+      }
+      else{
+        alert("输入的值为非负整数")
+        break
+      }
+    }
+    var c = a - b
+    console.log(c)
+  }
+  else
+    alert("数字的个数为1~1000之间的整数")
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/07">
+  var n = Number(prompt("参与决赛项目的天数"))
+  var n1 = 0
+  var n2 = 0
+  var n3 = 0
+  if(n >= 1 && n <= 17 && n % 1 == 0){
+    for(var i = 0 ; i < n ; i++) {
+      var n_1 = Number(prompt("第"+ (i+1) +"天获得的金牌数目"))
+      var n_2 = Number(prompt("第"+ (i+1) +"天获得的银牌数目"))
+      var n_3 = Number(prompt("第"+ (i+1) +"天获得的铜牌数目"))
+        if(n_1 >= 0 && n_2 >= 0 && n_3 >= 0 && n_1 % 1 == 0 && n_1 % 1 == 0 && n_1 % 1 == 0 ){
+          n1 = n1 + n_1
+          n2 = n2 + n_2
+          n3 = n3 + n_3
+        }
+        else{
+          alert("奖牌数量为大于等于0的整数")
+          break
+        }
+    }
+    N = n1 + n2 + n3
+    console.log(n1,n2,n3,N)
+  }
+  else
+    alert("输入的天数为范围在1~17的正整数")
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/08">
+  var a = 0
+  var n = Number(prompt("输入一个n边形"))
+  if(n >= 3 && n % 1 == 0){
+    for(i = 1; i < n; i++){
+      var n_angle = Number(prompt("输入内角的度数"))
+        if(0 < n_angle && n_angle < 180){
+          a = a + n_angle
+        }
+        else{
+          alert("多边形内角角度范围在0~180之间")
+          break
+        }
+    }
+    var N = (n-2)*180 - a
+    console.log(N)
+  }
+  else
+    alert("多边形不能少于三条边，边数为正整数")
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/09">
+  var m = Number(prompt("请输入m的值"))
+  var n = Number(prompt("请输入n的值")) 
+  var a = 0
+  for(var i = m; i <= n; i++){
+    if(i % 2 !== 0){
+      a = i+a
+    }
+  }console.log(a)
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/10">
+  var m = Number(prompt("请输入m的值"))
+  var n = Number(prompt("请输入n的值"))
+  var a = 0 
+  for(var i = m ; i <= n ; i++){
+    if(i % 17 == 0){
+      a = a + i
+    }
+  }console.log(a)
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/11">
+  var k = Number(prompt("请输入正整数的个数"))
+  var o = 0 
+  var f = 0
+  var t = 0
+  for(i = 0 ; i < k ; i++){
+    var a = Number(prompt("请输入正整数的数值"))
+      if(a == 1){
+        o = o + 1
+      }
+      if(a == 5){
+        f = f + 1
+      }    
+      if(a == 10){
+        t = t + 1
+      }     
+  }
+  console.log(o,f,t)
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/12">
+  var n = Number(prompt("请输入n的值"))
+  var m = Number(prompt("请输入m的值"))
+  var c = 0
+  for(i = 0; i < n ; i++){
+    var a = Number(prompt("请输入整数a")) 
+    if(a == m){
+      c = c + 1
+    } 
+  }
+  console.log(c)
 </script>
 
-<script id="ch0103/01">
+<script id="ch0105/13">
+  var n = Number(prompt("请输入n的值"))
+  var a = Number(prompt("请输入a的值"))
+  var a1 = 1
+  for(i = 0 ; i < n ; i++){
+    a1 = a1 * a 
+  }console.log(a1)
 </script>
 
+<script id="ch0105/14">
+  var x = Number(prompt("请输入x的值"))
+  var n = Number(prompt("请输入n的值"))
+  var a = x
+  for(i = 0; i < n; i++){
+    a = a * 1.001
+  }
+  a = a.toFixed(4)
+  console.log(a)
+</script>
+
+<script id="ch0105/15">
+  var R = Number(prompt("请输入R的值"))
+  var M = Number(prompt("请输入M的值"))
+  var Y = Number(prompt("请输入Y的值"))
+  var a = M
+  for(i = 0; i < Y; i++){
+    a = a * (1 + R / 100)
+  }
+  a = Math.floor(a)
+  console.log(a)
+</script>
+
+<script id="ch0105/16">
+  var N = Number(prompt("请输入M的值"))
+  var K = Number(prompt("请输入K的值"))  
+  var a = 200
+  for(var i = 0 ; i < K ; i++){
+    a = a * (1 + K / 100)
+  }
+
+  console.log(a)
+</script>
+
+<script id="ch0105/17">
+  var k = Number(prompt("请输入一个正整数k"))
+  var a = 1
+  var b = 1 
+  for(i = 0 ; i < k ; i++){
+    a = a 
+  }
+</script>
+
+<script id="ch0105/18">
+  var n = Number(prompt("请输入n的值"))
+  var x1 = Number(prompt("请输入x1的值"))
+  var y1 = Number(prompt("请输入y2的值"))
+  var a = y1 / x1
+  for(i = 1 ; i < n ; i++){
+    var x = Number(prompt("请输入x的值"))
+    var y = Number(prompt("请输入y的值"))
+    var b = y / x
+      if(b - a > 0.05){
+        console.log("better")
+      }
+      else
+        if(a - b> 0.05){
+          console.log("worse")
+        }
+        else
+          console.log("same")
+  }
+</script>
+
+<script id="ch0105/19">
+  var n = Number(prompt("请输入n的值"))
+  for(var i = 0 ; i < n ; i++){
+    var x = Number(prompt("请输入x的值"))
+    var y = Number(prompt("请输入y的值"))
+    var a = Number(prompt("请输入a的值"))
+    var b = 2 * ( x + y ) / 50 + 3 * a / 2
+  }
+  b = Math.floor(b)
+  console.log(b)
+</script>
+
+<script id="ch0105/20">
+  var h = Number(prompt("请输入h的值"))
+  var n = h
+  var a = 0
+  for(i = 0 ; i < 10 ; i++){
+    n = n / 2
+    a = a + n + 2 * n
+  }
+  console.log(a,n)
+</script>
+
+<script id="ch0105/21">
+  var N = Number(prompt("请输入N的值")) 
+  var n
+  var m
+  while(N !== 1 ){
+    if(N % 2 !== 0){
+      n = N * 3 + 1
+      console.log(N+'*3+1='+n)
+      N = n
+    }
+    else
+      if(N % 2 == 0){
+        m = N / 2
+        console.log(N+'/2='+m)
+        N = m
+      }
+  }console.log("end")
+</script>
+
+<script id="ch0105/22">
+
+</script>
+
+<script id="ch0105/23">
+  var m = Number(prompt("请输入药品总量m"))
+  var n = Number(prompt("请输入取药的人数n"))
+  for(i = 0 ; i < n ; i++){
+    var a = Number(prompt("希望取走的药品数"))
+  }
+</script>
+
+<script id="ch0105/24">
+  var n = Number(prompt("输入正整数n"))
+  var c = 0
+  for(i = 0 ; i < n ; i++){
+    var a = Number(prompt("输入收缩压a"))
+    var b = Number(prompt("输入舒张压b")) 
+    if(a >= 90 && a <= 140 && b >=60 && b <= 90 ){
+      c = c + 1
+    }
+  }console.log(c)
+</script>
+  
+<script id="ch0105/25">
+  var a = Number(prompt("请输入十进制数"))
+
+</script>
+
+<script id="ch0105/26">
+  var n = Number(prompt("请输入数字的数目"))
+  var a = 0
+  var n1 = parseInt(m % 10)
+  var n2 = parseInt((m % 100) / 10)
+  var n3 = parseInt((m % 1000) / 100)
+  var n4 = parseInt((m % 10000) / 1000)
+  for(i = 0 ; i < n ; i++){
+    var m = Number(prompt("请输入数字m"))
+    if(n1 - n4 - n3 - n2 > 0){
+      a = a + 1
+    }
+  }
+  console.log(a)
+</script>
+
+<script id="ch0105/27">
+  var K = Number(prompt("请输入K的值"))
+  var Sn = 0
+  var a = 0 
+  for(var i = 1 ;  ; i++){
+    Sn = Sn + 1 / i 
+    a = a + 1
+    if(Sn > K){
+      break     
+    }
+  }console.log(a)
+</script>
+
+<script id="ch0105/28">
+  var n = Number(prompt("请输入整数的值"))
+  while(n > 0){
+    var c = n % 10   
+    n = (n - c) / 10
+    console.log(c) 
+  }       // 该代码也可用做实现进制转换
+</script>
+
+<script id="ch0105/29">
+  var n = Number(prompt("请输入n的值"))
+  var sum = 0 
+  while(n !== 0){
+    var c = n % 10
+    n = (n - c) / 10 
+    sum = sum * 10  + c 
+  }
+//  if(n>=0){
+//    console.log(sum)
+//  }
+//  else 
+    console.log(sum)
+</script>
+
+<script id="ch0105/30">
+  var m = Number(prompt("请输入m的值"))
+  var k = Number(prompt("请输入k的值")) 
+  //var n = m 
+  // var a = 0
+  // while(n !== 0){
+  //   var c = n % 10
+  //   if(c == 3){
+  //     a = a +1
+  //   }n =(n - c) / 10
+  // }
+  // if(n % 19 == 0 && k == a){
+  //   console.log("YES")
+  // }
+  // else
+  //   console.log("NO")
+  if(m % 19 == 0){
+    while(m !== 0){
+      var c = m % 10
+      if(c == 3){
+        k--
+      }
+      m = (m - c) / 10
+    }
+    if(k == 0){
+      console.log("YES")
+    }
+    else
+    console.log("NO")
+  }
+  else
+    console.log("NO")
+</script>
+
+<script id="ch0105/31">
+  var m = Number(prompt("请输入m的值"))
+  var n = Number(prompt("请输入n的值")) 
+  for(var light = 1 ; light < n ; light++){
+    // var is_light_on = true 
+    var toggled_time = 0
+
+    for(var a = 1 ; a < m ; a++){
+      if(light % a ==0){        
+        // if(is_light_on){
+        //   is_light_on = false
+        // }        
+        // else{
+        //   is_light_on = true
+        vtoggled_time++
+        }
+      }
+    // if(!is_light_on){
+      if(vtoggled_time % 2 == 1){
+        console.log(light)
+    }   
+  }
+</script>    
+<!-- 根据灯的数目约数的数量可以知道灯的开关状态
+可以输出完全平方数，在人数和灯数目一致时 
+有奇数个约数的数是完全平方数，因为约数是成对出现的
+知道约数的数量，完全平方根两边约数相等 -->
+
+<script id="ch0105/32">
+  var n = Number(prompt("请输入n的值"))
+  var a = 1
+  var b = 2
+  var sum = 0
+  for(var i = 0 ; i < n ; i++){
+    b = a + b
+    a = b 
+    sum = sum + (b / a )
+    console.log(b / a)
+  }
+  console.log(sum)
+</script>
+
+<script id="ch0105/33">
+  var n = Number(prompt(""))
+  sum = 0
+  for(var i = 1 ; i <= n ; i++){
+    if(i % 2 !== 0){
+      sum = sum + 1 / i 
+    }else
+      sum = sum - 1 / i
+  }
+  sum = sum.toFixed(4)
+  console.log(sum)
+</script>
+
+<script id="ch0105/34">
+  var n = Number(prompt(""))
+  sum = 0
+  a = 1 
+  for(var i = 1 ; i <= n; i++){
+    a = a * i  
+    sum  = sum + a
+  }   
+  console.log(sum)
+</script>
+
+<script id="ch0105/35">
+  var n = Number(prompt(""))
+  var sum = 0
+  var a = 1 
+  for(var i = 1 ; i <= n; i++){
+    a = a * i  
+    sum  = sum + 1 / a 
+  }
+  sum = sum.toFixed(10)
+  console.log(b)
+</script>
+
+<script id="ch0105/36">
+  var x = Number(prompt(""))
+  var n = Number(prompt(""))
+  var sum = 0
+  var a 
+  for(var i = 0 ; i < n ; i++){
+    a = x**i 
+    sum = sum + a
+  }
+  sum = sum.toFixed(2)
+  console.log(sum)
+</script>
+
+<script id="ch0105/39">
+  var n = Number(prompt(""))
+  var sum = 0
+  for(var i = 0 ; i < n ; i ++){
+    var m = i
+    var digit = m % 10
+    m = (m - digit) / 10
+    if(digit !== 7 && i % 7 !== 0){
+      sum = sum + i ** 2
+    }
+  }console.log(sum)   
+</script>
+
+<script id="ch0105/40">
+  var n = Number(prompt(""))
+  var sum = 0
+  for(var i = 0 ; i <= n ; i ++){
+    var m = i
+    while(m > 0){    
+      var digit = m % 10
+      m = (m - digit) / 10
+      if(digit == 1){
+        sum = sum + 1
+      }
+    }
+  }
+  console.log(sum) 
+</script>
+
+<script id="ch0105/41">
+  var L = Number(prompt(""))
+  var R = Number(prompt(""))
+  var sum = 0
+  for(var i = L ; i <= R ; i++){
+    var m = i
+    while(m > 0){
+      var digit = m % 10
+      m = (m -digit) / 10
+      if(digit == 2){
+        sum++
+      }
+    }
+  }console.log(sum)
+</script>
+
+<script id="ch0105/43">
+  var n = Number(prompt(""))
+  for(var i = 2 ; i < n / 2 ; i++){
+    var a = n / i
+    if(a )
+    console.log(n / i)
+    break
+  }
+</script>
+
+<script id="ch0105/44">
+  var n = Number(prompt(""))
+
+</script>
+<script id="ch0105/45">
