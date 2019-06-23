@@ -863,8 +863,8 @@
   var b = 1 
   for(i = 0 ; i < k ; i++){
     var c = a + b
-    b = a
-    a = c
+    a = b
+    b = c
   }console.log(c)
 </script>
 
@@ -963,34 +963,18 @@
 </script>
   
 <script id="ch0105/25">
-  for(a = 0 ;  ; a ++){
-    while(a > 0){
-      var n = a
-      var digit = n % 9
-      n = (n - digit) / 9
-      var N = 0
-      N = N * 9 + digit
-    }
-    while(N > 0){
-      var N1 = N
-      var digit = N1 % 10
-      N1 = (N1 - digit) / 10
-      var Nn = 0
-      Nn = Nn * 9 + digit
-    }
-    while(a > 0){
-      var s = a
-      var digit = s % 7
-      s = (s - digit) / 7
-      var S = 0
-      S = S * 7 + digit
-    }
-    if( S == Nn){
-      console.log(a)
-      console.log(S)
-      console.log(N)
-      break
-    }
+  for(var n = 49 ; n <= 728 ; i++){
+    var seven1 = n % 7 
+    var seven2 = (n - seven1) / 7 % 7
+    var seven2 = ((n - seven1) / 7 - seven2) % 7
+
+    var nine1 = n % 7 
+    var nine2 = (n - nine1) / 7 % 7
+    var nine2 = ((n - nine1) / 7 - nine2) % 7
+  }
+  if(seven1 == nine3 && seven2 == nine2 && seven3 == nine1){
+    console.log(n,'' +seven3 + seven2 + seven1,'' +nine3 + nine2 + nine1)
+    break 
   }
 </script>
 
@@ -999,16 +983,19 @@
   var a = 0
   for(var i = 0 ; i < n ;i++){
     var m = Number(prompt("请输入数字"))
+    var last = m % 10
+    m = (m - last) / 10
     while(m > 0){
-      var b = m
       var digit = m % 10
-      var c = digit
-      c = c - digit
+      last -= digit
+      if(last < 0){
+        break
+      }
       m = (m - digit) / 10
-      if(c > 0){
-        a++
-      }      
     }
+    if(last > 0){
+      a++
+    }      
   }console.log(a)
 </script>
 
@@ -1097,11 +1084,11 @@
         // }        
         // else{
         //   is_light_on = true
-        vtoggled_time++
+        toggled_time++
         }
       }
     // if(!is_light_on){
-      if(vtoggled_time % 2 == 1){
+      if(toggled_time % 2 == 1){
         console.log(light)
     }   
   }
